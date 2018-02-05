@@ -1,3 +1,5 @@
-html * {
-    font-family: "Courier New" !important;
+* {
+    margin : 0;
+    padding : 0;
 }
+
