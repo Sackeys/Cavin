@@ -1,0 +1,11 @@
+fr\univ_smb\isc\m2\controllers\rest\RestCustomerController.class
+fr\univ_smb\isc\m2\config\rest\ResourceNotFoundException.class
+fr\univ_smb\isc\m2\domain\customer\CustomerService.class
+fr\univ_smb\isc\m2\config\WebInitializer.class
+fr\univ_smb\isc\m2\controllers\web\HomeController.class
+fr\univ_smb\isc\m2\config\rest\HttpLogoutSuccessHandler.class
+fr\univ_smb\isc\m2\config\WebConfig.class
+fr\univ_smb\isc\m2\config\SecurityConfig.class
+fr\univ_smb\isc\m2\config\rest\AuthFailureHandler.class
+fr\univ_smb\isc\m2\domain\customer\Customer.class
+fr\univ_smb\isc\m2\config\SecurityInitializer.class
