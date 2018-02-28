@@ -23,11 +23,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
             .antMatchers(GET, "/api/**").anonymous()
-            .antMatchers(POST, "/api/**").authenticated()
-            .antMatchers(PUT, "/api/**").authenticated()
-            .antMatchers(DELETE, "/api/**").authenticated()
+            .antMatchers(POST, "/api/**").anonymous()
+            .antMatchers(PUT, "/api/**").anonymous()
+            .antMatchers(DELETE, "/api/**").anonymous()
+            //.antMatchers(POST, "/api/**").authenticated()
+            //.antMatchers(PUT, "/api/**").authenticated()
+            //.antMatchers(DELETE, "/api/**").authenticated()
             .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
             .and()
+            .csrf().disable()
             .formLogin().usernameParameter("username").passwordParameter("password");
     }
 
