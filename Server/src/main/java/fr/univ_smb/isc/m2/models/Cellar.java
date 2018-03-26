@@ -10,6 +10,7 @@ public class Cellar {
     public String label;
     public String description;
     public ArrayList<Slot> wines;
+    public int limit;
 
     private static int counter = 0;
 

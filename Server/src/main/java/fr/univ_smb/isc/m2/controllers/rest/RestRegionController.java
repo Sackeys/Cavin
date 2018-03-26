@@ -2,9 +2,8 @@ package fr.univ_smb.isc.m2.controllers.rest;
 
 import fr.univ_smb.isc.m2.services.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import fr.univ_smb.isc.m2.models.Region;
 
@@ -21,8 +20,13 @@ public class RestRegionController {
         this.regionService = regionService;
     }
 
-    @RequestMapping(value = "/regions", method = RequestMethod.GET)
+    @RequestMapping(value = "/region", method = RequestMethod.GET)
     public List<Region> region() {
         return regionService.all();
+    }
+
+    @RequestMapping(value = "/region", method = RequestMethod.POST)
+    public void region(@RequestBody Region region) {
+        regionService.add(region);
     }
 }

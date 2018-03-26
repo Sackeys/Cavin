@@ -10,7 +10,9 @@ fr\univ_smb\isc\m2\config\rest\HttpLogoutSuccessHandler.class
 fr\univ_smb\isc\m2\models\User.class
 fr\univ_smb\isc\m2\services\ColorService.class
 fr\univ_smb\isc\m2\services\CellarService.class
+fr\univ_smb\isc\m2\repository\RegionRepository.class
 fr\univ_smb\isc\m2\services\BottleService.class
+fr\univ_smb\isc\m2\config\JPAConfig.class
 fr\univ_smb\isc\m2\services\RegionService.class
 fr\univ_smb\isc\m2\models\Region.class
 fr\univ_smb\isc\m2\config\rest\ResourceNotFoundException.class
