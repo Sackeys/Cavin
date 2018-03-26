@@ -4,8 +4,7 @@ import fr.univ_smb.isc.m2.models.Region;
 import fr.univ_smb.isc.m2.repository.RegionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -35,10 +34,16 @@ public class RegionService {
     }
 
     public List<Region> all() {
-        return regionRepository.findAll();
+        List<Region> result = regionRepository.findAll();
+        result.sort(Comparator.comparing(region -> region.label));
+        return result;
     }
 
-    public void add(Region region) {
+    public Region add(Region region) {
+        if (region.label == null || region.label.isEmpty())
+            return null;
+
         regionRepository.save(region);
+        return region;
     }
 }

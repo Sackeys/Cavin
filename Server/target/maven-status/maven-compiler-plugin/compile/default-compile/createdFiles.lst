@@ -9,6 +9,7 @@ fr\univ_smb\isc\m2\controllers\web\HomeController.class
 fr\univ_smb\isc\m2\config\rest\HttpLogoutSuccessHandler.class
 fr\univ_smb\isc\m2\models\User.class
 fr\univ_smb\isc\m2\services\ColorService.class
+fr\univ_smb\isc\m2\repository\ColorRepository.class
 fr\univ_smb\isc\m2\services\CellarService.class
 fr\univ_smb\isc\m2\repository\RegionRepository.class
 fr\univ_smb\isc\m2\services\BottleService.class

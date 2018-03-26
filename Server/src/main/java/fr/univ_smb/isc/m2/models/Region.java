@@ -1,4 +1,5 @@
 package fr.univ_smb.isc.m2.models;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
