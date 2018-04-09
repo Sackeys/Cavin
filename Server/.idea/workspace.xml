@@ -2,32 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6bcf8c0-d1b9-4d2d-b01b-b5c13027b85d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_all_1_9_5.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/repository/ColorRepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/integration/RegionIntegrationTest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/integration/RetrieveUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/unit/ColorUnitTest.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/unit/RegionUnitTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/integration/ColorIntegrationTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/integration/JsonReader.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/integration/json/Colors.json" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/Cavin_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Cavin_war_exploded.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Cavin.iml" afterPath="$PROJECT_DIR$/Cavin.iml" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/controllers/rest/RestColorController.java" afterPath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/controllers/rest/RestColorController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/controllers/rest/RestRegionController.java" afterPath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/controllers/rest/RestRegionController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Color.java" afterPath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Color.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Region.java" afterPath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Region.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/repository/RegionRepository.java" afterPath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/repository/RegionRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/ColorService.java" afterPath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/ColorService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/RegionService.java" afterPath="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/RegionService.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RegionUnitTest.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/controllers/rest/RestColorController.class" afterPath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/controllers/rest/RestColorController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/controllers/rest/RestRegionController.class" afterPath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/controllers/rest/RestRegionController.class" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/integration/RegionIntegrationTest.java" afterPath="$PROJECT_DIR$/src/test/java/integration/RegionIntegrationTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unit/ColorUnitTest.java" afterPath="$PROJECT_DIR$/src/test/java/unit/ColorUnitTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unit/RegionUnitTest.java" afterPath="$PROJECT_DIR$/src/test/java/unit/RegionUnitTest.java" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/models/Color.class" afterPath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/models/Color.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/models/Region.class" afterPath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/models/Region.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/services/ColorService.class" afterPath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/services/ColorService.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/services/RegionService.class" afterPath="$PROJECT_DIR$/target/classes/fr/univ_smb/isc/m2/services/RegionService.class" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/RegionUnitTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/integration/RegionIntegrationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/integration/RegionIntegrationTest.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/unit/ColorUnitTest.class" afterPath="$PROJECT_DIR$/target/test-classes/unit/ColorUnitTest.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/unit/RegionUnitTest.class" afterPath="$PROJECT_DIR$/target/test-classes/unit/RegionUnitTest.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,49 +27,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ColorService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/ColorService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1335#1336#0" expanded="true" />
-                <element signature="e#1383#1384#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ColorUnitTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/unit/ColorUnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+            <state relative-caret-position="339">
+              <caret line="61" column="59" lean-forward="false" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegionUnitTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/unit/RegionUnitTest.java">
+      <file leaf-file-name="ColorIntegrationTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/integration/ColorIntegrationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="54" column="60" lean-forward="false" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegionIntegrationTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/integration/RegionIntegrationTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="213">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,7 +71,19 @@
       <find>tomcat</find>
       <find>embed</find>
       <find>JsonControllerTestIT</find>
+      <find>isSortedAccordingTo</find>
+      <find>log4j</find>
+      <find>Log</find>
+      <find>Reg</find>
+      <find>id</find>
+      <find>label</find>
+      <find>hexa</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>&quot;label&quot;</replace>
+      <replace>&quot;hexa&quot;</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -149,23 +127,26 @@
         <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/config/JPAConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/BottleService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/RegionUnitTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/unit/RegionService.java" />
         <option value="$PROJECT_DIR$/src/test/java/unit/RegionServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/RegionService.java" />
-        <option value="$PROJECT_DIR$/src/test/java/unit/RegionUnitTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/RetrieveUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/integration/RetrieveUtil.java" />
-        <option value="$PROJECT_DIR$/src/test/java/integration/RegionIntegrationTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/repository/RegionRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/repository/ColorRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/ColorService.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/controllers/rest/RestColorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/controllers/rest/RestRegionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Region.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Color.java" />
+        <option value="$PROJECT_DIR$/src/test/java/unit/RegionUnitTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/unit/ColorUnitTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/integration/RegionIntegrationTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/integration/json/Colors.json" />
+        <option value="$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Color.java" />
+        <option value="$PROJECT_DIR$/src/test/java/integration/JsonReader.java" />
+        <option value="$PROJECT_DIR$/src/test/java/integration/ColorIntegrationTest.java" />
       </list>
     </option>
   </component>
@@ -199,8 +180,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -336,6 +318,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="integration" type="462c0819:PsiDirectoryNode" />
+              <item name="json" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cavin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="unit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -346,8 +337,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -368,7 +358,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.unit in Cavin">
+  <component name="RunManager" selected="JUnit.integration in Cavin">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -579,11 +569,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.unit in Cavin" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.integration in Cavin" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.All in Cavin" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RegionServiceTest.shouldReturnAllRegions2" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RegionServiceTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.integration in Cavin" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.unit in Cavin" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RegionServiceTest.shouldReturnAllRegions2" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RegionServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -610,49 +600,52 @@
       <workItem from="1519928763142" duration="243000" />
       <workItem from="1520858219115" duration="15791000" />
       <workItem from="1522063420264" duration="16609000" />
+      <workItem from="1523274035255" duration="9634000" />
+      <workItem from="1523284578885" duration="2503000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_Cavin - 2018.03.26 at 16h 46m 57s.xml">
-      <configuration name="All in Cavin" configurationId="JUnit" />
+    <history-entry file="integration_in_Cavin - 2018.04.09 at 16h 42m 18s.xml">
+      <configuration name="integration in Cavin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Cavin - 2018.03.26 at 16h 49m 58s.xml">
-      <configuration name="All in Cavin" configurationId="JUnit" />
+    <history-entry file="integration_in_Cavin - 2018.04.09 at 16h 42m 53s.xml">
+      <configuration name="integration in Cavin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Cavin - 2018.03.26 at 16h 51m 02s.xml">
-      <configuration name="All in Cavin" configurationId="JUnit" />
+    <history-entry file="integration_in_Cavin - 2018.04.09 at 16h 45m 09s.xml">
+      <configuration name="integration in Cavin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Cavin - 2018.03.26 at 16h 58m 44s.xml">
-      <configuration name="All in Cavin" configurationId="JUnit" />
+    <history-entry file="integration_in_Cavin - 2018.04.09 at 16h 46m 01s.xml">
+      <configuration name="integration in Cavin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Cavin - 2018.03.26 at 17h 01m 36s.xml">
-      <configuration name="All in Cavin" configurationId="JUnit" />
+    <history-entry file="integration_in_Cavin - 2018.04.09 at 16h 46m 29s.xml">
+      <configuration name="integration in Cavin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Cavin - 2018.03.26 at 17h 02m 43s.xml">
-      <configuration name="All in Cavin" configurationId="JUnit" />
+    <history-entry file="integration_in_Cavin - 2018.04.09 at 16h 53m 30s.xml">
+      <configuration name="integration in Cavin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Cavin - 2018.03.26 at 17h 03m 11s.xml">
-      <configuration name="All in Cavin" configurationId="JUnit" />
+    <history-entry file="integration_in_Cavin - 2018.04.09 at 16h 57m 39s.xml">
+      <configuration name="integration in Cavin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_Cavin - 2018.03.26 at 17h 37m 05s.xml">
-      <configuration name="All in Cavin" configurationId="JUnit" />
+    <history-entry file="integration_in_Cavin - 2018.04.09 at 17h 09m 12s.xml">
+      <configuration name="integration in Cavin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="unit_in_Cavin - 2018.03.26 at 17h 37m 37s.xml">
-      <configuration name="unit in Cavin" configurationId="JUnit" />
+    <history-entry file="integration_in_Cavin - 2018.04.09 at 17h 10m 32s.xml">
+      <configuration name="integration in Cavin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="unit_in_Cavin - 2018.03.26 at 17h 40m 41s.xml">
-      <configuration name="unit in Cavin" configurationId="JUnit" />
+    <history-entry file="integration_in_Cavin - 2018.04.09 at 17h 17m 22s.xml">
+      <configuration name="integration in Cavin" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70736000" />
+    <option name="totallyTimeSpent" value="82873000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1044" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45704466" sideWeight="0.52953815" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875144" sideWeight="0.23093449" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -663,18 +656,17 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.49785176" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875144" sideWeight="0.70622987" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45704466" sideWeight="0.47046188" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24006444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875144" sideWeight="0.7690655" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.49785176" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31729668" sideWeight="0.45542428" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24704619" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.49785176" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -682,6 +674,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.49785176" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,33 +685,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Customer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Wine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/CustomerService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Grape.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -769,7 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,7 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -785,7 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
           <caret line="43" column="44" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,7 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,7 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="21" column="44" lean-forward="true" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,16 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/config/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,15 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="26" column="52" lean-forward="true" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -887,35 +832,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/unit/dfgh.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/unit/RegionServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unit/dfgh.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/unit/RegionServiceTest.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/1.11.9.RELEASE/spring-data-jpa-1.11.9.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,44 +845,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
           <caret line="56" column="63" lean-forward="true" selection-start-line="55" selection-start-column="50" selection-end-line="56" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/fg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/fg.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/DummyUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/integration/RetrieveUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="17" column="59" lean-forward="false" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/config/JPAConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -977,7 +868,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="38" lean-forward="true" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -986,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,7 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,86 +895,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/RegionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Region.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/assertj/assertj-core/3.9.0/assertj-core-3.9.0.jar!/org/assertj/core/api/AbstractListAssert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/integration/RetrieveUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/config/JPAConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-294">
+          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/RegionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/ColorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/controllers/rest/RestRegionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="2" column="49" lean-forward="true" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/controllers/rest/RestColorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/unit/RegionUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="985">
+          <caret line="59" column="69" lean-forward="false" selection-start-line="59" selection-start-column="69" selection-end-line="59" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/integration/RegionIntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="124" column="20" lean-forward="true" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="34" lean-forward="true" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="24" column="50" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/integration/json/Colors.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/models/Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="189">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/controllers/rest/RestRegionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/controllers/rest/RestColorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fr/univ_smb/isc/m2/services/ColorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1335#1336#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/unit/ColorUnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+        <state relative-caret-position="339">
+          <caret line="61" column="59" lean-forward="false" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/unit/RegionUnitTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/integration/JsonReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="54" column="60" lean-forward="false" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="60" />
+        <state relative-caret-position="357">
+          <caret line="29" column="50" lean-forward="true" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/integration/RegionIntegrationTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/integration/ColorIntegrationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="213">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

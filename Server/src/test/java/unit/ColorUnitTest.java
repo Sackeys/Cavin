@@ -58,5 +58,7 @@ public class ColorUnitTest {
 
         service = new ColorService(serviceRepository);
         assertThat(service.all().size()).isEqualTo(4);
+
+        assertThat(service.all()).containsExactlyElementsOf(colors);
     }
 }

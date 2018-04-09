@@ -56,6 +56,8 @@ public class RegionUnitTest {
 
         service = new RegionService(serviceRepository);
         assertThat(service.all().size()).isEqualTo(4);
+
+        assertThat(service.all()).containsExactlyElementsOf(regions);
     }
 
     @Test
@@ -74,7 +76,7 @@ public class RegionUnitTest {
         when(serviceRepository.findAll()).thenReturn(regions);
 
         service = new RegionService(serviceRepository);
-        assertThat(service.all()).containsExactlyInAnyOrder(auvergne, centreval, grandest, occitanie);
+        assertThat(service.all()).containsExactlyInAnyOrderElementsOf(regions);
     }
 
 }

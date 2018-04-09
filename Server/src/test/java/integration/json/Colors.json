@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "label": "Jaune vert",
+    "hexa": "e2dc85"
+  },
+  {
+    "id": 2,
+    "label": "Jaune paille",
+    "hexa": "fdd751"
+  },
+  {
+    "id": 3,
+    "label": "Or vert",
+    "hexa": "e9d750"
+  },
+  {
+    "id": 4,
+    "label": "Or pâle",
+    "hexa": "ebc651"
+  },
+  {
+    "id": 5,
+    "label": "Or jaune",
+    "hexa": "e4c040"
+  },
+  {
+    "id": 6,
+    "label": "Doré",
+    "hexa": "d4aa2e"
+  },
+  {
+    "id": 7,
+    "label": "Vieil or",
+    "hexa": "d19330"
+  },
+  {
+    "id": 8,
+    "label": "Ambré clair",
+    "hexa": "e19e36"
+  },
+  {
+    "id": 9,
+    "label": "Ambré foncé",
+    "hexa": "e39132"
+  },
+  {
+    "id": 10,
+    "label": "Roux",
+    "hexa": "c57d29"
+  },
+  {
+    "id": 11,
+    "label": "Framboise",
+    "hexa": "e94e65"
+  },
+  {
+    "id": 12,
+    "label": "Cerise",
+    "hexa": "d93d3b"
+  },
+  {
+    "id": 13,
+    "label": "Rubis",
+    "hexa": "b91c19"
+  },
+  {
+    "id": 14,
+    "label": "Pourpre",
+    "hexa": "9a1f49"
+  },
+  {
+    "id": 15,
+    "label": "Violet",
+    "hexa": "8e1665"
+  },
+  {
+    "id": 16,
+    "label": "Grenat",
+    "hexa": "743651"
+  },
+  {
+    "id": 17,
+    "label": "Tuilé",
+    "hexa": "8d3216"
+  }
+]

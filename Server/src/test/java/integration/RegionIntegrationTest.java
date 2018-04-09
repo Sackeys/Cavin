@@ -11,8 +11,6 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import static org.apache.http.HttpStatus.SC_NOT_FOUND;
@@ -34,9 +32,6 @@ public class RegionIntegrationTest {
 
         // 13 régions retournées
         assertThat(getRegions.size()).isEqualTo(13);
-
-        // Régions dans l'ordre alphabétique
-        //assertThat(getRegions).isSortedAccordingTo(Comparator.comparing(region -> region.label));
     }
 
     @Test
