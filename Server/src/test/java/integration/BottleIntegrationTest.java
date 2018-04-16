@@ -1,5 +1,6 @@
 package integration;
 
+import fr.univ_smb.isc.m2.models.Bottle;
 import fr.univ_smb.isc.m2.models.Color;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -19,46 +20,44 @@ import static org.apache.http.HttpStatus.SC_NOT_FOUND;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ColorIntegrationTest {
+public class BottleIntegrationTest {
 
     private int port = 8080;
-    private JSONArray sample = JsonReader.getArray("Colors");
+    private JSONArray sample = JsonReader.getArray("Bottles");
 
-    public ColorIntegrationTest() throws IOException, ParseException {
+    public BottleIntegrationTest() throws IOException, ParseException {
     }
 
-    // Récupère les couleurs à l'URL /api/color
-    List<Color> getColors() throws IOException, URISyntaxException {
-        HttpUriRequest request = new HttpGet(new URL("http://localhost:" + port + "/api/color/").toURI());
+    // Récupère les bouteilles à l'URL /api/bottle
+    List<Color> getBottles() throws IOException, URISyntaxException {
+        HttpUriRequest request = new HttpGet(new URL("http://localhost:" + port + "/api/bottle/").toURI());
         HttpResponse response = HttpClientBuilder.create().build().execute(request);
-        return RetrieveUtil.retrieveResourceFromResponse(response, new ArrayList<Color>().getClass());
+        return RetrieveUtil.retrieveResourceFromResponse(response, new ArrayList<Bottle>().getClass());
     }
 
     @Test
-    public void should_200_On_All_Colors() throws IOException, URISyntaxException {
-        HttpUriRequest request = new HttpGet(new URL("http://localhost:" + port + "/api/color/").toURI());
+    public void should_200_On_All_Bottles() throws IOException, URISyntaxException {
+        HttpUriRequest request = new HttpGet(new URL("http://localhost:" + port + "/api/bottle/").toURI());
         HttpResponse response = HttpClientBuilder.create().build().execute(request);
         assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_OK);
     }
 
     @Test
-    public void should_404_On_Non_Existing_Color() throws IOException, URISyntaxException {
-        HttpUriRequest request = new HttpGet(new URL("http://localhost:" + port + "/api/color/" + 25).toURI());
+    public void should_404_On_Non_Existing_Bottle() throws IOException, URISyntaxException {
+        HttpUriRequest request = new HttpGet(new URL("http://localhost:" + port + "/api/bottle/" + 25).toURI());
         HttpResponse response = HttpClientBuilder.create().build().execute(request);
         assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_NOT_FOUND);
     }
 
     @Test
-    public void should_Find_All_Colors() throws IOException, URISyntaxException {
-        List<Color> getColors = getColors();
-        assertThat(getColors.size()).isEqualTo(17);
+    public void should_Find_All_Bottles() throws IOException, URISyntaxException {
+        assertThat(getBottles().size()).isEqualTo(3);
     }
 
     @Test
     public void should_Equals_To() throws IOException, URISyntaxException, ParseException {
-        List<Color> getColors = getColors();
-        JSONArray jsonColors = JsonReader.toArray(getColors);
+        JSONArray jsonBottles = JsonReader.toArray(getBottles());
 
-        assertThat(jsonColors).containsExactlyInAnyOrderElementsOf(sample);
+        assertThat(jsonBottles).containsExactlyInAnyOrderElementsOf(sample);
     }
 }

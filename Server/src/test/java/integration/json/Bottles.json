@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "label": "Château Rahoul",
+    "region": {
+      "id": 1,
+      "label": "Auvergne-Rhône-Alpes"
+    },
+    "color": {
+      "id": 12,
+      "label": "Cerise",
+      "hexa": "d93d3b"
+    },
+    "year": 2015,
+    "grape": {
+      "id": 9,
+      "label": "Finot Noit"
+    }
+  },
+  {
+    "id": 2,
+    "label": "Champagne Bollinger Rosé",
+    "region": {
+      "id": 5,
+      "label": "Corse"
+    },
+    "color": {
+      "id": 11,
+      "label": "Framboise",
+      "hexa": "e94e65"
+    },
+    "year": 2017,
+    "grape": {
+      "id": 7,
+      "label": "Cabernet-sauvignon"
+    }
+  },
+  {
+    "id": 3,
+    "label": "L'Ibérique",
+    "region": {
+      "id": 3,
+      "label": "Bretagne"
+    },
+    "color": {
+      "id": 2,
+      "label": "Jaune paille",
+      "hexa": "fdd751"
+    },
+    "year": 2012,
+    "grape": {
+      "id": 4,
+      "label": "Chenin"
+    }
+  }
+]

@@ -1,37 +1,57 @@
 package fr.univ_smb.isc.m2.services;
 
+import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
 import fr.univ_smb.isc.m2.models.Grape;
-import fr.univ_smb.isc.m2.models.Wine;
+import fr.univ_smb.isc.m2.repository.GrapeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class GrapeService {
-    private final ArrayList<Grape> grapes;
+    private final GrapeRepository grapeRepository;
 
-    public GrapeService() {
-        grapes = new ArrayList<>();
+    @Autowired()
+    public GrapeService(GrapeRepository grapeRepository) {
+        this.grapeRepository = grapeRepository;
         init();
     }
 
     public void init() {
-        grapes.add(new Grape("Riesling"));
-        grapes.add(new Grape("Gewürztraminer"));
-        grapes.add(new Grape("Viognier"));
-        grapes.add(new Grape("Chenin"));
-        grapes.add(new Grape("Chardonnay"));
-        grapes.add(new Grape("Sauvignon"));
-        grapes.add(new Grape("Cabernet-sauvignon"));
-        grapes.add(new Grape("Cabernet-franc"));
-        grapes.add(new Grape("Finot Noit"));
-        grapes.add(new Grape("Merlot"));
-        grapes.add(new Grape("Syrah"));
-        grapes.add(new Grape("Grenache"));
+        add(new Grape("Riesling"));
+        add(new Grape("Gewürztraminer"));
+        add(new Grape("Viognier"));
+        add(new Grape("Chenin"));
+        add(new Grape("Chardonnay"));
+        add(new Grape("Sauvignon"));
+        add(new Grape("Cabernet-sauvignon"));
+        add(new Grape("Cabernet-franc"));
+        add(new Grape("Finot Noit"));
+        add(new Grape("Merlot"));
+        add(new Grape("Syrah"));
+        add(new Grape("Grenache"));
     }
 
     public List<Grape> all() {
-        return grapes;
+        return grapeRepository.findAll();
+    }
+
+    public Grape add(Grape grape) {
+        if (grape.label == null || grape.label.isEmpty())
+            return null;
+
+        grapeRepository.save(grape);
+        return grape;
+    }
+
+    public Grape get(int id) {
+        List<Grape> foundGrapes = all().stream().filter(b -> b.id == id).collect(Collectors.toList());
+        if (foundGrapes.isEmpty()) {
+            throw new ResourceNotFoundException();
+        }
+
+        return foundGrapes.get(0);
     }
 }

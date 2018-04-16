@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Color {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
 
     public String label;

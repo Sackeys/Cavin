@@ -1,11 +1,8 @@
 package fr.univ_smb.isc.m2.controllers.rest;
 
-import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
-import fr.univ_smb.isc.m2.models.User;
-import fr.univ_smb.isc.m2.services.UserService;
-import fr.univ_smb.isc.m2.models.Slot;
 import fr.univ_smb.isc.m2.models.Bottle;
 import fr.univ_smb.isc.m2.services.BottleService;
+import fr.univ_smb.isc.m2.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,9 +30,10 @@ public class RestBottleController {
     @RequestMapping(value = "/bottle/{id}", method = RequestMethod.GET)
     public Bottle bottle(@PathVariable String id) {
         int idBottle = parseInt(id);
-        return bottleService.getById(idBottle);
+        return bottleService.get(idBottle);
     }
 
+    /*
     @RequestMapping(value = "/bottle", method = RequestMethod.GET, params = { "user", "cellar" })
     public List<Slot> bottle(@RequestParam String user, @RequestParam String cellar) {
         int idUser = parseInt(user);
@@ -48,6 +46,7 @@ public class RestBottleController {
 
         return bottleService.getByUserCellar(usr, idCellar);
     }
+    */
 
     /*
     @RequestMapping(value = "/bottles", method = RequestMethod.GET, params = "label")
@@ -63,8 +62,10 @@ public class RestBottleController {
     }
     */
 
+    /*
     @RequestMapping(value = "/test", method = RequestMethod.GET, params = "label", produces = "application/json; charset=utf-8")
     public String test(@RequestParam String label) {
         return label;
     }
+    */
 }

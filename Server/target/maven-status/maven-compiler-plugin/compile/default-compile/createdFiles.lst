@@ -1,3 +1,4 @@
+fr\univ_smb\isc\m2\repository\BottleRepository.class
 fr\univ_smb\isc\m2\config\WebInitializer.class
 fr\univ_smb\isc\m2\models\CellarCompact.class
 fr\univ_smb\isc\m2\config\SecurityInitializer.class
@@ -17,7 +18,6 @@ fr\univ_smb\isc\m2\config\JPAConfig.class
 fr\univ_smb\isc\m2\services\RegionService.class
 fr\univ_smb\isc\m2\models\Region.class
 fr\univ_smb\isc\m2\config\rest\ResourceNotFoundException.class
-fr\univ_smb\isc\m2\models\Wine.class
 fr\univ_smb\isc\m2\services\UserService.class
 fr\univ_smb\isc\m2\config\WebConfig.class
 fr\univ_smb\isc\m2\controllers\rest\RestBottleController.class
