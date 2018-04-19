@@ -21,9 +21,4 @@ public class RestRegionController {
     public List<Region> region() {
         return regionService.all();
     }
-
-    @RequestMapping(value = "/region", method = RequestMethod.POST)
-    public void region(@RequestBody Region region) {
-        regionService.add(region);
-    }
 }

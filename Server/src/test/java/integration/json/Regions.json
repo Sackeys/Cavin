@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "label": "Auvergne-Rhône-Alpes"
+  },
+  {
+    "id": 2,
+    "label": "Bourgogne-Franche-Comté"
+  },
+  {
+    "id": 3,
+    "label": "Bretagne"
+  },
+  {
+    "id": 4,
+    "label": "Centre-Val de Loire"
+  },
+  {
+    "id": 5,
+    "label": "Corse"
+  },
+  {
+    "id": 6,
+    "label": "Grand Est"
+  },
+  {
+    "id": 7,
+    "label": "Hauts-de-France"
+  },
+  {
+    "id": 9,
+    "label": "Normandie"
+  },
+  {
+    "id": 10,
+    "label": "Nouvelle-Aquitaine"
+  },
+  {
+    "id": 11,
+    "label": "Occitanie"
+  },
+  {
+    "id": 12,
+    "label": "Pays de la Loire"
+  },
+  {
+    "id": 13,
+    "label": "Provence-Alpes-Côte d'Azur"
+  },
+  {
+    "id": 8,
+    "label": "Île-de-France"
+  }
+]

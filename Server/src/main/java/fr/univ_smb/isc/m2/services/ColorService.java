@@ -1,12 +1,11 @@
 package fr.univ_smb.isc.m2.services;
 
-import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
 import fr.univ_smb.isc.m2.models.Color;
 import fr.univ_smb.isc.m2.repository.ColorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ColorService {
@@ -44,19 +43,15 @@ public class ColorService {
 
     public Color add(Color color) {
         if (color.label == null || color.label.isEmpty()
-                || color.hexa == null || color.hexa.isEmpty())
+                || color.hexa == null || color.hexa.isEmpty()) {
             return null;
+        }
 
         colorRepository.save(color);
         return color;
     }
 
     public Color get(int id) {
-        List<Color> foundColors = all().stream().filter(b -> b.id == id).collect(Collectors.toList());
-        if (foundColors.isEmpty()) {
-            throw new ResourceNotFoundException();
-        }
-
-        return foundColors.get(0);
+        return colorRepository.findOne(id);
     }
 }

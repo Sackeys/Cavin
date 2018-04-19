@@ -78,5 +78,4 @@ public class RegionUnitTest {
         service = new RegionService(serviceRepository);
         assertThat(service.all()).containsExactlyInAnyOrderElementsOf(regions);
     }
-
 }

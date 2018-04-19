@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "label": "Cave principale",
+    "description": "Toute sorte de vins",
+    "wines": []
+  },
+  {
+    "id": 2,
+    "label": "Cave secondaire",
+    "description": "",
+    "wines": []
+  }
+]

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Cavin</title>
+    <script type="text/javascript" src="/script/jquery.js"></script>
+    <script type="text/javascript" src="/script/vue.js"></script>
+</head>
+<body>
+    <a href="/view/index.html"><- Retour à l'index</a>
+    <div id="cellar">
+        <h1>Créer une cave</h1>
+
+        <p v-show="error">Une erreur est survenue...</p>
+        <p v-show="done">La cave <strong>{{ addedCellar }}</strong> a été créée.</p>
+
+        <form>
+            <input type="text" v-model="label" placeholder="Nom de la cave" />
+            <textarea v-model="description"></textarea>
+            <input type="button" value="Créer" @click="save" />
+        </form>
+
+        <h1>Mes caves</h1>
+
+        <p v-show="removed">La cave <strong>{{ removedCellar }}</strong> a été supprimée.</p>
+
+        <ul>
+            <li v-for="(cellar, i) in cellars" :key="i" style="margin : 20px auto;">
+                <strong>{{ cellar.label }}</strong>
+                | <em>{{ (cellar.description === null || cellar.description.trim().length === 0) ? '(aucune description)' : cellar.description }}</em>
+                | <button @click="remove(cellar.id, i)">Supprimer</button>
+                <hr />
+                <form>
+                    <input v-model="quantity[i]" type="text" placeholder="Qte" />
+                    <select v-model="bottle[i]">
+                        <option value="default" disabled selected>Vin</option>
+                        <option v-for="bottle in bottles" :value="bottle.id">{{ bottle.label }}</option>
+                    </select>
+                    <input type="button" value="Ajouter" @click="add(cellar.id, quantity[i], bottle[i])" />
+                </form>
+                <ul>
+                    <li>Bidule</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    new Vue({
+        el : '#cellar',
+
+        data : {
+            token : 0,
+
+            addedCellar : '',
+            removedCellar : '',
+            error : false,
+            done : false,
+            removed : false,
+
+            label : '',
+            description : 'Description',
+            quantity : [],
+            bottle : [],
+            bottles : [],
+            cellars : []
+        },
+
+        methods : {
+            resetMsg : function() {
+                this.error = false;
+                this.done = false;
+                this.removed = false;
+            },
+
+            save : function() {
+                this.resetMsg();
+
+                if (this.label.trim().length === 0) {
+                    this.error = true;
+                    return;
+                }
+
+                let cellar = {
+                    "label" : this.label,
+                    "description" : this.description
+                };
+
+                $.ajax({
+                    url : '/api/cellar?user=' + this.token,
+                    type : 'POST',
+                    data : JSON.stringify(cellar),
+                    contentType : 'application/json',
+                    success : (cellarAdded) => {
+                        this.addedCellar = cellarAdded.label;
+                        this.cellars.push(cellarAdded);
+                        this.done = true;
+
+                        this.quantity.push('');
+                        this.bottle.push('default');
+                    }
+                });
+            },
+
+            remove : function(id, i) {
+                this.resetMsg();
+
+                $.ajax({
+                    url : '/api/cellar/' + id + "?user=" + this.token,
+                    type : 'DELETE',
+                    success : (cellarRemoved) => {
+                        this.removedCellar = cellarRemoved.label;
+                        this.cellars = this.cellars.filter(c => {
+                            return c.id !== cellarRemoved.id;
+                        });
+                        this.removed = true;
+
+                        this.quantity.splice(i, 1);
+                        this.bottle.splice(i, 1);
+                    }
+                });
+            },
+
+            add : function(id, qte, bottle) {
+                console.log(id, qte, bottle)
+            }
+        },
+
+        created : function() {
+            this.token = 1;
+
+            $.when($.get('/api/bottle'), $.get('/api/cellar?user=' + this.token)).then((bottles, cellars) => {
+                this.bottles = bottles[0];
+                this.cellars = cellars[0];
+
+                this.cellars.forEach((v, i) => {
+                   this.quantity[i] = '';
+                   this.bottle[i] = 'default';
+                });
+            });
+        }
+    })
+</script>
+</html>

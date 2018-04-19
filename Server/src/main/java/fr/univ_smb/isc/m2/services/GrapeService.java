@@ -1,13 +1,11 @@
 package fr.univ_smb.isc.m2.services;
 
-import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
 import fr.univ_smb.isc.m2.models.Grape;
 import fr.univ_smb.isc.m2.repository.GrapeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class GrapeService {
@@ -39,19 +37,15 @@ public class GrapeService {
     }
 
     public Grape add(Grape grape) {
-        if (grape.label == null || grape.label.isEmpty())
+        if (grape.label == null || grape.label.isEmpty()) {
             return null;
+        }
 
         grapeRepository.save(grape);
         return grape;
     }
 
     public Grape get(int id) {
-        List<Grape> foundGrapes = all().stream().filter(b -> b.id == id).collect(Collectors.toList());
-        if (foundGrapes.isEmpty()) {
-            throw new ResourceNotFoundException();
-        }
-
-        return foundGrapes.get(0);
+        return grapeRepository.findOne(id);
     }
 }

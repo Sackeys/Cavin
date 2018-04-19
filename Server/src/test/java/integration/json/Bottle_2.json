@@ -1,0 +1,18 @@
+{
+  "id": 4,
+  "label": "Nouveau vin",
+  "region": {
+    "id": 1,
+    "label": "Auvergne-Rhône-Alpes"
+  },
+  "color": {
+    "id": 1,
+    "label": "Jaune vert",
+    "hexa": "e2dc85"
+  },
+  "year": 2015,
+  "grape": {
+    "id": 2,
+    "label": "Gewürztraminer"
+  }
+}

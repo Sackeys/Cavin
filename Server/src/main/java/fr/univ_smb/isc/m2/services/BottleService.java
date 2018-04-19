@@ -1,13 +1,12 @@
 package fr.univ_smb.isc.m2.services;
 
-import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
 import fr.univ_smb.isc.m2.models.Bottle;
+import fr.univ_smb.isc.m2.models.BottleCompact;
 import fr.univ_smb.isc.m2.repository.BottleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class BottleService {
@@ -40,30 +39,38 @@ public class BottleService {
                 || bottle.region == null
                 || bottle.color == null
                 || bottle.year <= 0
-                || bottle.grape == null)
+                || bottle.grape == null) {
             return null;
+        }
 
         bottleRepository.save(bottle);
         return bottle;
     }
 
+    public Bottle add(BottleCompact bottleCompact) {
+        Bottle bottle = new Bottle(bottleCompact.label,
+                regionService.get(bottleCompact.region),
+                colorService.get(bottleCompact.color),
+                bottleCompact.year,
+                grapeService.get(bottleCompact.grape));
+
+        return add(bottle);
+    }
+
+    public Bottle remove(Bottle bottle) {
+        if (bottle == null) {
+            return null;
+        }
+
+        bottleRepository.delete(bottle);
+        return bottle;
+    }
+
+    public Bottle remove(int id) {
+        return remove(get(id));
+    }
+
     public Bottle get(int id) {
-        List<Bottle> foundBottles = all().stream().filter(b -> b.id == id).collect(Collectors.toList());
-        if (foundBottles.isEmpty()) {
-            throw new ResourceNotFoundException();
-        }
-
-        return foundBottles.get(0);
+        return bottleRepository.findOne(id);
     }
-
-    /*
-    public List<Slot> getByUserCellar(User user, int cellar) {
-        List<Cellar> foundCellars = user.cellars.stream().filter(c -> c.id == cellar).collect(Collectors.toList());
-        if (foundCellars.isEmpty()) {
-            throw new ResourceNotFoundException();
-        }
-
-        return foundCellars.get(0).wines;
-    }
-    */
 }

@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "label": "Château Rahoul",
+  "region": {
+    "id": 1,
+    "label": "Auvergne-Rhône-Alpes"
+  },
+  "color": {
+    "id": 12,
+    "label": "Cerise",
+    "hexa": "d93d3b"
+  },
+  "year": 2015,
+  "grape": {
+    "id": 9,
+    "label": "Finot Noit"
+  }
+}

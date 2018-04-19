@@ -1,6 +1,8 @@
 package fr.univ_smb.isc.m2.controllers.rest;
 
+import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
 import fr.univ_smb.isc.m2.models.Bottle;
+import fr.univ_smb.isc.m2.models.BottleCompact;
 import fr.univ_smb.isc.m2.services.BottleService;
 import fr.univ_smb.isc.m2.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,23 +32,14 @@ public class RestBottleController {
     @RequestMapping(value = "/bottle/{id}", method = RequestMethod.GET)
     public Bottle bottle(@PathVariable String id) {
         int idBottle = parseInt(id);
-        return bottleService.get(idBottle);
-    }
 
-    /*
-    @RequestMapping(value = "/bottle", method = RequestMethod.GET, params = { "user", "cellar" })
-    public List<Slot> bottle(@RequestParam String user, @RequestParam String cellar) {
-        int idUser = parseInt(user);
-        int idCellar = parseInt(cellar);
-        User usr = userService.getUser(idUser);
-
-        if (usr == null) {
+        Bottle bottle = bottleService.get(idBottle);
+        if (bottle == null) {
             throw new ResourceNotFoundException();
         }
 
-        return bottleService.getByUserCellar(usr, idCellar);
+        return bottle;
     }
-    */
 
     /*
     @RequestMapping(value = "/bottles", method = RequestMethod.GET, params = "label")
@@ -62,10 +55,24 @@ public class RestBottleController {
     }
     */
 
-    /*
-    @RequestMapping(value = "/test", method = RequestMethod.GET, params = "label", produces = "application/json; charset=utf-8")
-    public String test(@RequestParam String label) {
-        return label;
+    @RequestMapping(value = "/bottle", method = RequestMethod.POST)
+    public Bottle add(@RequestBody BottleCompact bottleCompact) {
+        Bottle bottle = bottleService.add(bottleCompact);
+        if (bottle == null) {
+            throw new ResourceNotFoundException();
+        }
+
+        return bottle;
     }
-    */
+
+    @RequestMapping(value = "/bottle/{id}", method = RequestMethod.DELETE)
+    public Bottle remove(@PathVariable String id) {
+        int idBottle = parseInt(id);
+        Bottle bottle = bottleService.remove(idBottle);
+        if (bottle == null) {
+            throw new ResourceNotFoundException();
+        }
+
+        return bottle;
+    }
 }

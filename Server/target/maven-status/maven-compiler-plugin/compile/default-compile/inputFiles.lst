@@ -4,6 +4,7 @@ D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\servic
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\config\rest\AuthFailureHandler.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\controllers\rest\RestGrapeController.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\Color.java
+D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\repository\CellarRepository.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\config\SecurityInitializer.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\config\rest\HttpLogoutSuccessHandler.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\controllers\rest\RestRegionController.java
@@ -11,10 +12,12 @@ D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\contro
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\controllers\rest\RestColorController.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\Region.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\config\WebConfig.java
+D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\repository\SlotRepository.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\config\JPAConfig.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\controllers\rest\RestCellarController.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\repository\BottleRepository.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\Cellar.java
+D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\services\SlotService.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\Grape.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\services\BottleService.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\repository\ColorRepository.java
@@ -22,6 +25,7 @@ D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\contro
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\User.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\repository\GrapeRepository.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\config\SecurityConfig.java
+D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\repository\UserRepository.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\services\CellarService.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\services\GrapeService.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\Slot.java
@@ -29,5 +33,6 @@ D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\config
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\controllers\web\HomeController.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\CellarCompact.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\services\ColorService.java
+D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\BottleCompact.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\repository\RegionRepository.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\Bottle.java

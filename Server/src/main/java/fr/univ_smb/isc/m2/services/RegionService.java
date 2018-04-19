@@ -1,13 +1,12 @@
 package fr.univ_smb.isc.m2.services;
 
-import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
 import fr.univ_smb.isc.m2.models.Region;
 import fr.univ_smb.isc.m2.repository.RegionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class RegionService {
@@ -42,19 +41,15 @@ public class RegionService {
     }
 
     public Region add(Region region) {
-        if (region.label == null || region.label.isEmpty())
+        if (region.label == null || region.label.isEmpty()) {
             return null;
+        }
 
         regionRepository.save(region);
         return region;
     }
 
     public Region get(int id) {
-        List<Region> foundRegions = all().stream().filter(b -> b.id == id).collect(Collectors.toList());
-        if (foundRegions.isEmpty()) {
-            throw new ResourceNotFoundException();
-        }
-
-        return foundRegions.get(0);
+        return regionRepository.findOne(id);
     }
 }

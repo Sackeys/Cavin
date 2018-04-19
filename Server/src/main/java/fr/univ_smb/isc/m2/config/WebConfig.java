@@ -18,5 +18,4 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/script/**").addResourceLocations("/WEB-INF/js/");
     }
 
-
 }

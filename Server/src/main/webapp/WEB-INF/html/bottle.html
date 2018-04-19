@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script type="text/javascript" src="/script/jquery.js"></script>
+    <script type="text/javascript" src="/script/vue.js"></script>
+</head>
+<body>
+    <a href="/view/index.html"><- Retour à l'index</a>
+    <div id="bottle">
+        <h1>Supprimer une bouteille</h1>
+
+        <p v-show="removed">La bouteille <strong>{{ removedBottle }}</strong> a été supprimée.</p>
+
+        <ul>
+            <li v-for="bottle in bottles">
+                <div :style="'display : inline-block; color : #' + bottle.color.hexa + ';'">▉</div>
+                <strong>{{ bottle.label }}</strong>, {{ bottle.region.label }}, {{ bottle.grape.label }} ({{ bottle.year }})
+                <button @click="remove(bottle.id)">Supprimer</button>
+            </li>
+        </ul>
+
+
+        <h1>Ajouter une bouteille</h1>
+
+        <p v-show="error">Une erreur est survenue...</p>
+        <p v-show="done">La bouteille <strong>{{ addedBottle }}</strong> a été ajoutée.</p>
+
+        <form>
+            <input v-model="label" type="text" placeholder="Nom de la bouteille" />
+
+            <select v-model="region">
+                <option value="default" disabled selected>Région</option>
+                <option v-for="region in regions" :value="region.id">{{ region.label }}</option>
+            </select>
+
+            <select v-model="color">
+                <option value="default" disabled selected>Couleur</option>
+                <option v-for="color in colors" :value="color.id">{{ color.label }}</option>
+            </select>
+
+            <input v-model="year" type="text" placeholder="Année" />
+
+            <select v-model="grape">
+                <option value="default" disabled selected>Sépage</option>
+                <option v-for="grape in grapes" :value="grape.id">{{ grape.label }}</option>
+            </select>
+
+            <input type="button" value="Enregistrer" @click="save" />
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+
+    new Vue({
+        el : '#bottle',
+        data : {
+            currentYear : (new Date()).getFullYear(),
+            addedBottle : '',
+            removedBottle : '',
+            error : false,
+            done : false,
+            removed : false,
+
+            bottles : [],
+
+            regions : [],
+            colors : [],
+            grapes : [],
+
+            label : '',
+            region : 'default',
+            color : 'default',
+            year : 0,
+            grape : 'default'
+        },
+
+        methods : {
+            resetMsg : function() {
+                this.error = false;
+                this.done = false;
+                this.removed = false;
+            },
+
+            save : function() {
+                this.resetMsg();
+
+                if (this.label.trim().length === 0
+                    || this.region === 'default' || this.color === 'default' || this.grape == 'default'
+                    || parseInt(this.year) <= 0 || parseInt(this.year) > this.currentYear) {
+                    this.error = true;
+                    return;
+                }
+
+                let bottle = {
+                    "label" : this.label,
+                    "region" : this.region,
+                    "color" : this.color,
+                    "year" : this.year,
+                    "grape" : this.grape
+                };
+
+                $.ajax({
+                    url : '/api/bottle',
+                    type : 'POST',
+                    data : JSON.stringify(bottle),
+                    contentType : 'application/json',
+                    success : (bottleAdded) => {
+                        this.addedBottle = bottleAdded.label;
+                        this.bottles.push(bottleAdded);
+                        this.done = true;
+                    }
+                });
+            },
+
+            remove : function(id) {
+                this.resetMsg();
+
+                $.ajax({
+                    url : '/api/bottle/' + id,
+                    type : 'DELETE',
+                    success : (bottleRemoved) => {
+                        this.removedBottle = bottleRemoved.label;
+                        this.bottles = this.bottles.filter(b => {
+                            return b.id !== bottleRemoved.id;
+                        });
+                        this.removed = true;
+                    }
+                });
+            }
+        },
+
+        created : function() {
+            this.year = this.currentYear;
+
+            $.when($.get('/api/bottle'), $.get('/api/region'), $.get('/api/color'), $.get('/api/grape')).then((bottles, regions, colors, grapes) => {
+                this.bottles = bottles[0];
+                this.regions = regions[0];
+                this.colors = colors[0];
+                this.grapes = grapes[0];
+            });
+        }
+    });
+</script>
+</html>

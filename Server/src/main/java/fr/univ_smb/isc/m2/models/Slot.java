@@ -1,14 +1,20 @@
 package fr.univ_smb.isc.m2.models;
 
+import javax.persistence.*;
+
+@Entity
 public class Slot {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int id;
+
+    @OneToOne
     public Bottle bottle;
+
     public int count;
 
-    private static int counter = 0;
-
     public Slot(Bottle bottle, int count) {
-        id = counter++;
         this.bottle = bottle;
         this.count = count;
     }

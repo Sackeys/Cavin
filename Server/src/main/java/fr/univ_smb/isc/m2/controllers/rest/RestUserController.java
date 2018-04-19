@@ -4,7 +4,10 @@ import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
 import fr.univ_smb.isc.m2.models.User;
 import fr.univ_smb.isc.m2.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -20,6 +23,24 @@ public class RestUserController {
         this.userService = userService;
     }
 
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public List<User> user() {
+        return userService.all();
+    }
+
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+    public User user(@PathVariable String id) {
+        int idUser = parseInt(id);
+
+        User user = userService.get(idUser);
+        if (user == null) {
+            throw new ResourceNotFoundException();
+        }
+
+        return user;
+    }
+
+    /*
     @RequestMapping(value = "/subscribe", method = RequestMethod.POST)
     public boolean subscribe(@RequestParam String login, @RequestParam String password) {
         return true || false;
@@ -43,7 +64,7 @@ public class RestUserController {
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public User user(@PathVariable String id) throws ResourceNotFoundException {
         int userId = parseInt(id);
-        User user = userService.getUser(userId);
+        User user = userService.get(userId);
 
         if (user == null) {
             throw new ResourceNotFoundException();
@@ -51,4 +72,5 @@ public class RestUserController {
 
         return user;
     }
+    */
 }

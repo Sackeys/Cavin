@@ -1,46 +1,79 @@
 package fr.univ_smb.isc.m2.services;
 
-import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
-import fr.univ_smb.isc.m2.models.*;
+import fr.univ_smb.isc.m2.models.Cellar;
+import fr.univ_smb.isc.m2.models.User;
+import fr.univ_smb.isc.m2.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.Integer.parseInt;
-import static java.util.stream.Collectors.toList;
-
 @Service
 public class UserService {
-    private final ArrayList<User> users;
+    private final UserRepository userRepository;
+    private final CellarService cellarService;
 
-    public UserService() {
-        users = new ArrayList<>();
+    @Autowired()
+    public UserService(UserRepository userRepository, CellarService cellarService) {
+        this.userRepository = userRepository;
+        this.cellarService = cellarService;
         init();
     }
 
     public void init() {
-        Bottle b1 = new Bottle("Château Rahoul", new Region("Auvergne-Rhône-Alpes"), new Color("Cerise", "d93d3b"), 2015, new Grape("Finot Noit")),
-               b2 = new Bottle("Champagne Bollinger Rosé", new Region("Corse"), new Color("Framboise", "e94e65"), 2017, new Grape("Cabernet-sauvignon")),
-               b3 = new Bottle("L'Ibérique", new Region("Bretagne"), new Color("Jaune paille", "fdd751"), 2012, new Grape("Chenin"));
+        add(new User("Jack", "EK94d69s", new ArrayList<Cellar>() {{
+            add(cellarService.get(1));
+            add(cellarService.get(2));
+        }}));
 
-        Cellar c1 = new Cellar().add(b1).add(b2),
-               c2 = new Cellar().add(b1).add(b2).add(b3),
-               c3 = new Cellar();
-
-        User u1 = new User("John", "5d5v4e5fdl").add(c1),
-             u2 = new User("Marc", "d6vD2vf").add(c2).add(c3),
-             u3 = new User("Alf", "6969FFFF");
-
-        users.add(u1);
-        users.add(u2);
-        users.add(u3);
+        add(new User("Marc", "A69D666E"));
     }
 
     public List<User> all() {
-        return users;
+        return userRepository.findAll();
     }
 
+    public User add(User user) {
+        if (user.login == null || user.login.isEmpty()
+                || user.password == null || user.password.isEmpty()) {
+            return null;
+        }
+
+        userRepository.save(user);
+        return user;
+    }
+
+    public Cellar add(int id, Cellar cellar) {
+        if (cellar.label == null || cellar.label.isEmpty()) {
+            return null;
+        }
+
+        User user = get(id);
+        if (user == null) {
+            return null;
+        }
+
+        user.cellars.add(cellar);
+        userRepository.save(user);
+        return cellar;
+    }
+
+    public Cellar remove(User user, Cellar cellar) {
+        if (user == null || cellar == null) {
+            return null;
+        }
+
+        user.cellars.remove(cellar);
+        userRepository.save(user);
+        return cellar;
+    }
+
+    public User get(int id) {
+        return userRepository.findOne(id);
+    }
+
+    /*
     public User getUser(int userId) {
         List<User> users = all().stream().filter(u -> u.id == userId).collect(toList());
 
@@ -60,4 +93,5 @@ public class UserService {
 
         return collect.get(0).cellars;
     }
+    */
 }

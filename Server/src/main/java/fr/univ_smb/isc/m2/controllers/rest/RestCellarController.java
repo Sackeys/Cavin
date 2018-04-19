@@ -1,18 +1,16 @@
 package fr.univ_smb.isc.m2.controllers.rest;
 
 import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
-import fr.univ_smb.isc.m2.models.CellarCompact;
-import fr.univ_smb.isc.m2.models.User;
-import fr.univ_smb.isc.m2.services.UserService;
 import fr.univ_smb.isc.m2.models.Cellar;
+import fr.univ_smb.isc.m2.models.CellarCompact;
 import fr.univ_smb.isc.m2.services.CellarService;
+import fr.univ_smb.isc.m2.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
-import static java.util.stream.Collectors.toList;
 
 @RestController
 @RequestMapping("/api")
@@ -26,40 +24,43 @@ public class RestCellarController {
         this.cellarService = cellarService;
     }
 
+    // A SUPPRIMER
     @RequestMapping(value = "/cellar", method = RequestMethod.GET)
+    public List<Cellar> cellar() {
+        return cellarService.all();
+    }
+
+    @RequestMapping(value = "/cellar", method = RequestMethod.GET, params = { "user" })
     public List<Cellar> cellar(@RequestParam String user) {
-        int userId = parseInt(user);
-        User usr = userService.getUser(userId);
-
-        if (usr == null) {
+        int idUser = Integer.parseInt(user);
+        List<Cellar> cellars = cellarService.getByUser(idUser);
+        if (cellars == null) {
             throw new ResourceNotFoundException();
         }
 
-        return usr.cellars;
+        return cellars;
     }
 
-    @RequestMapping(value = "/cellar/add", method = RequestMethod.POST)
-    public Cellar add(@RequestParam String user, @RequestBody CellarCompact cellar) {
-        int userId = parseInt(user);
-        User usr = userService.getUser(userId);
-
-        if (usr == null) {
+    @RequestMapping(value = "/cellar", method = RequestMethod.POST)
+    public Cellar add(@RequestParam String user, @RequestBody CellarCompact cellarComptact) {
+        int idUser = Integer.parseInt(user);
+        Cellar cellar = cellarService.add(idUser, cellarComptact);
+        if (cellar == null) {
             throw new ResourceNotFoundException();
         }
 
-        return cellarService.add(usr, cellar);
+        return cellar;
     }
 
-    @RequestMapping(value = "/cellar/remove", method = RequestMethod.DELETE)
-    public Cellar remove(@RequestParam String user, @RequestParam String cellar) {
-        int userId = parseInt(user);
-        int cellarId = parseInt(cellar);
-        User usr = userService.getUser(userId);
-
-        if (usr == null) {
+    @RequestMapping(value = "/cellar/{id}", method = RequestMethod.DELETE)
+    public Cellar remove(@PathVariable String id, @RequestParam String user) {
+        int idCellar = parseInt(id),
+                idUser = parseInt(user);
+        Cellar cellar = cellarService.remove(idUser, idCellar);
+        if (cellar == null) {
             throw new ResourceNotFoundException();
         }
 
-        return cellarService.remove(usr, cellarId);
+        return cellar;
     }
 }

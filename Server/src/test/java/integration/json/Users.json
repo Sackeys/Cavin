@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "login": "Jack",
+    "cellars": [
+      {
+        "id": 1,
+        "label": "Cave principale",
+        "description": "Toute sorte de vins",
+        "wines": []
+      },
+      {
+        "id": 2,
+        "label": "Cave secondaire",
+        "description": "",
+        "wines": []
+      },
+      {
+        "id": 3,
+        "label": "Nouvelle cave",
+        "description": "Pour enfermer des gens...",
+        "wines": []
+      },
+      {
+        "id": 4,
+        "label": "Une autre cave",
+        "description": null,
+        "wines": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "login": "Marc",
+    "cellars": []
+  }
+]
