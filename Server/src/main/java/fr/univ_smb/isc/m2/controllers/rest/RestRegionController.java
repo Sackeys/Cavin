@@ -9,7 +9,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class RestRegionController {
-
     private final RegionService regionService;
 
     @Autowired()

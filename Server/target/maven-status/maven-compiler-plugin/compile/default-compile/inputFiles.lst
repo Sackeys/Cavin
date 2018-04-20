@@ -12,6 +12,7 @@ D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\contro
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\controllers\rest\RestColorController.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\Region.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\config\WebConfig.java
+D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\models\SlotCompact.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\repository\SlotRepository.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\config\JPAConfig.java
 D:\Etudes\Master\S8\INFO806\Cavin\Server\src\main\java\fr\univ_smb\isc\m2\controllers\rest\RestCellarController.java

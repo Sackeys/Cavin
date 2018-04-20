@@ -57,7 +57,7 @@ public class CellarIntegrationTest {
 
     @Test
     public void T2_Should_Find_All_Cellars() throws IOException, URISyntaxException {
-        assertThat(getCellars().size()).isEqualTo(2);
+        assertThat(getCellars().size()).isEqualTo(3);
     }
 
     @Test
@@ -84,7 +84,7 @@ public class CellarIntegrationTest {
 
         assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_OK);
         assertThat(json).isEqualTo(sampleUnit1);
-        assertThat(getCellars().size()).isEqualTo(3);
+        assertThat(getCellars().size()).isEqualTo(4);
     }
 
     @Test
@@ -103,7 +103,7 @@ public class CellarIntegrationTest {
 
         assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_OK);
         assertThat(json).isEqualTo(sampleUnit2);
-        assertThat(getCellars().size()).isEqualTo(4);
+        assertThat(getCellars().size()).isEqualTo(5);
     }
 
     @Test
@@ -146,7 +146,7 @@ public class CellarIntegrationTest {
 
         assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_OK);
         assertThat(json).isEqualTo(sampleUnit3);
-        assertThat(getCellars().size()).isEqualTo(3);
+        assertThat(getCellars().size()).isEqualTo(4);
     }
 
     @Test

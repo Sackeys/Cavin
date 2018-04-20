@@ -24,12 +24,6 @@ public class RestCellarController {
         this.cellarService = cellarService;
     }
 
-    // A SUPPRIMER
-    @RequestMapping(value = "/cellar", method = RequestMethod.GET)
-    public List<Cellar> cellar() {
-        return cellarService.all();
-    }
-
     @RequestMapping(value = "/cellar", method = RequestMethod.GET, params = { "user" })
     public List<Cellar> cellar(@RequestParam String user) {
         int idUser = Integer.parseInt(user);

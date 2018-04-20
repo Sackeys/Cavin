@@ -4,12 +4,6 @@
     "login": "Jack",
     "cellars": [
       {
-        "id": 1,
-        "label": "Cave principale",
-        "description": "Toute sorte de vins",
-        "wines": []
-      },
-      {
         "id": 2,
         "label": "Cave secondaire",
         "description": "",
@@ -17,12 +11,41 @@
       },
       {
         "id": 3,
+        "label": "Cave pré-remplie",
+        "description": "",
+        "wines": [
+          {
+            "id": 2,
+            "bottle": {
+              "id": 2,
+              "label": "Champagne Bollinger Rosé",
+              "region": {
+                "id": 5,
+                "label": "Corse"
+              },
+              "color": {
+                "id": 11,
+                "label": "Framboise",
+                "hexa": "e94e65"
+              },
+              "year": 2017,
+              "grape": {
+                "id": 7,
+                "label": "Cabernet-sauvignon"
+              }
+            },
+            "count": 4
+          }
+        ]
+      },
+      {
+        "id": 4,
         "label": "Nouvelle cave",
         "description": "Pour enfermer des gens...",
         "wines": []
       },
       {
-        "id": 4,
+        "id": 5,
         "label": "Une autre cave",
         "description": null,
         "wines": []

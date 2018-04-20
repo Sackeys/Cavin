@@ -39,38 +39,4 @@ public class RestUserController {
 
         return user;
     }
-
-    /*
-    @RequestMapping(value = "/subscribe", method = RequestMethod.POST)
-    public boolean subscribe(@RequestParam String login, @RequestParam String password) {
-        return true || false;
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public boolean login(@RequestParam String login, @RequestParam String password) {
-        return true || false;
-    }
-
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public boolean logout(@RequestParam String login, @RequestParam String password) {
-        return true || false;
-    }
-
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public List<User> user() {
-        return userService.all();
-    }
-
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
-    public User user(@PathVariable String id) throws ResourceNotFoundException {
-        int userId = parseInt(id);
-        User user = userService.get(userId);
-
-        if (user == null) {
-            throw new ResourceNotFoundException();
-        }
-
-        return user;
-    }
-    */
 }

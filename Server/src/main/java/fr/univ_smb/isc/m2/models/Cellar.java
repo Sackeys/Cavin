@@ -36,4 +36,9 @@ public class Cellar {
         this(label);
         this.description = description;
     }
+
+    public Cellar(String label, String description, List<Slot> wines) {
+        this(label, description);
+        this.wines = wines;
+    }
 }

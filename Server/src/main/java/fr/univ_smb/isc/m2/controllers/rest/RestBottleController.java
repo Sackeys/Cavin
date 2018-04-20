@@ -41,20 +41,6 @@ public class RestBottleController {
         return bottle;
     }
 
-    /*
-    @RequestMapping(value = "/bottles", method = RequestMethod.GET, params = "label")
-    public List<Bottle> bottlesByLabel(@RequestParam String label) {
-        // Encode label qui vient de l'url
-        List<Bottle> collect = bottleService.all().stream().filter(
-                b -> b.label.matches(label)).collect(toList());
-
-        if (collect.isEmpty())
-            throw new ResourceNotFoundException();
-
-        return collect;
-    }
-    */
-
     @RequestMapping(value = "/bottle", method = RequestMethod.POST)
     public Bottle add(@RequestBody BottleCompact bottleCompact) {
         Bottle bottle = bottleService.add(bottleCompact);

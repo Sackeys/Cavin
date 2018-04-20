@@ -7,7 +7,7 @@
     <script type="text/javascript" src="/script/vue.js"></script>
 </head>
 <body>
-    <a href="/view/index.html"><- Retour à l'index</a>
+    <a href="/"><- Retour à l'index</a>
     <div id="cellar">
         <h1>Créer une cave</h1>
 
@@ -39,7 +39,11 @@
                     <input type="button" value="Ajouter" @click="add(cellar.id, quantity[i], bottle[i])" />
                 </form>
                 <ul>
-                    <li>Bidule</li>
+                    <li v-for="slot in cellar.wines">
+                        <div :style="'display : inline-block; color : #' + slot.bottle.color.hexa + ';'">▉</div>
+                        <strong>{{ slot.bottle.label }}</strong>, {{ slot.bottle.region.label }}, {{ slot.bottle.grape.label }} ({{ slot.bottle.year }})
+                        <button style="margin-left : 50px;">-</button><h2 style="display : inline-block; margin : 0 20px;">{{ slot.count }}</h2><button>+</button>
+                    </li>
                 </ul>
             </li>
         </ul>

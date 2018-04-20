@@ -4,6 +4,7 @@ import fr.univ_smb.isc.m2.models.Bottle;
 import fr.univ_smb.isc.m2.models.BottleCompact;
 import fr.univ_smb.isc.m2.repository.BottleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,13 +12,15 @@ import java.util.List;
 @Service
 public class BottleService {
     private final BottleRepository bottleRepository;
+    private final SlotService slotService;
     private final RegionService regionService;
     private final ColorService colorService;
     private final GrapeService grapeService;
 
     @Autowired()
-    public BottleService(BottleRepository bottleRepository, RegionService regionService, ColorService colorService, GrapeService grapeService) {
+    public BottleService(BottleRepository bottleRepository, @Lazy SlotService slotService, RegionService regionService, ColorService colorService, GrapeService grapeService) {
         this.bottleRepository = bottleRepository;
+        this.slotService = slotService;
         this.regionService = regionService;
         this.colorService = colorService;
         this.grapeService = grapeService;
@@ -57,12 +60,15 @@ public class BottleService {
         return add(bottle);
     }
 
+    // Remove Bottle <- Remove Slots using Bottle <- Remove Cellar Slots using Bottle
     public Bottle remove(Bottle bottle) {
         if (bottle == null) {
             return null;
         }
 
+        slotService.remove(bottle);
         bottleRepository.delete(bottle);
+
         return bottle;
     }
 

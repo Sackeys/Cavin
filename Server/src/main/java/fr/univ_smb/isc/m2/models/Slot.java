@@ -14,6 +14,8 @@ public class Slot {
 
     public int count;
 
+    public Slot() {}
+
     public Slot(Bottle bottle, int count) {
         this.bottle = bottle;
         this.count = count;
@@ -21,13 +23,5 @@ public class Slot {
 
     public Slot(Bottle bottle) {
         this(bottle, 1);
-    }
-
-    public int add() {
-        return ++this.count;
-    }
-
-    public int remove() {
-        return --this.count;
     }
 }

@@ -25,6 +25,7 @@ public class UserService {
         add(new User("Jack", "EK94d69s", new ArrayList<Cellar>() {{
             add(cellarService.get(1));
             add(cellarService.get(2));
+            add(cellarService.get(3));
         }}));
 
         add(new User("Marc", "A69D666E"));
@@ -72,26 +73,4 @@ public class UserService {
     public User get(int id) {
         return userRepository.findOne(id);
     }
-
-    /*
-    public User getUser(int userId) {
-        List<User> users = all().stream().filter(u -> u.id == userId).collect(toList());
-
-        if (users.isEmpty()) {
-            return null;
-        }
-
-        return users.get(0);
-    }
-
-    public List<Cellar> getCellars(int user) {
-        List<User> collect = all().stream().filter(u -> u.id == user).collect(toList());
-
-        if (collect.isEmpty()) {
-            throw new ResourceNotFoundException();
-        }
-
-        return collect.get(0).cellars;
-    }
-    */
 }

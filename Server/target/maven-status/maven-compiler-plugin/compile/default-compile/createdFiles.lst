@@ -1,5 +1,6 @@
 fr\univ_smb\isc\m2\repository\BottleRepository.class
 fr\univ_smb\isc\m2\config\WebInitializer.class
+fr\univ_smb\isc\m2\models\SlotCompact.class
 fr\univ_smb\isc\m2\repository\UserRepository.class
 fr\univ_smb\isc\m2\models\CellarCompact.class
 fr\univ_smb\isc\m2\config\SecurityInitializer.class
@@ -34,5 +35,6 @@ fr\univ_smb\isc\m2\controllers\rest\RestColorController.class
 fr\univ_smb\isc\m2\models\Color.class
 fr\univ_smb\isc\m2\controllers\rest\RestCellarController.class
 fr\univ_smb\isc\m2\models\Slot.class
+fr\univ_smb\isc\m2\services\CellarService$1.class
 fr\univ_smb\isc\m2\controllers\rest\RestGrapeController.class
 fr\univ_smb\isc\m2\repository\CellarRepository.class
