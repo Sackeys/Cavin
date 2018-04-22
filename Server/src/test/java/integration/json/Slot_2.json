@@ -1,0 +1,22 @@
+{
+  "id": 3,
+  "bottle": {
+    "id": 3,
+    "label": "L'Ibérique",
+    "region": {
+      "id": 3,
+      "label": "Bretagne"
+    },
+    "color": {
+      "id": 2,
+      "label": "Jaune paille",
+      "hexa": "fdd751"
+    },
+    "year": 2012,
+    "grape": {
+      "id": 4,
+      "label": "Chenin"
+    }
+  },
+  "count": 8
+}

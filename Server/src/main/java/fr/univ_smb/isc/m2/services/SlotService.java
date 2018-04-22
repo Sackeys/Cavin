@@ -49,6 +49,12 @@ public class SlotService {
         }
     }
 
+    public void remove(Slot slot) {
+        if (slot != null) {
+            slotRepository.delete(slot);
+        }
+    }
+
     public void remove(Bottle bottle) {
         if (bottle != null) {
             List<Slot> slots = all().stream().filter(s -> s.bottle.id == bottle.id).collect(toList());
@@ -62,5 +68,25 @@ public class SlotService {
 
     public Slot get(int id) {
         return slotRepository.findOne(id);
+    }
+
+    public Bottle getBottle(int id) {
+        return bottleService.get(id);
+    }
+
+    public Slot up(Slot slot, int count, int limit) {
+        slot.count += count;
+        if (slot.count > limit) {
+            slot.count = limit;
+        }
+
+        slotRepository.save(slot);
+        return slot;
+    }
+
+    public Slot down(Slot slot, int count) {
+        slot.count -= count;
+        slotRepository.save(slot);
+        return slot;
     }
 }

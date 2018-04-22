@@ -56,6 +56,106 @@ public class CellarService {
         return userService.add(idUser, addedCellar);
     }
 
+    public Slot add(int idUser, int id, SlotCompact slotCompact) {
+        User user = userService.get(idUser);
+        if (user == null) {
+            return null;
+        }
+
+        List<Cellar> cellars = user.cellars.stream().filter(c -> c.id == id).collect(toList());
+        if (cellars.isEmpty()) {
+            return null;
+        }
+
+        Cellar cellar = cellars.get(0);
+        if (cellar == null || slotCompact == null || slotCompact.count <= 0) {
+            return null;
+        }
+
+        if (slotCompact.count > Cellar.limit) {
+            slotCompact.count = Cellar.limit;
+        }
+
+        List<Slot> slots = cellar.wines.stream().filter(s -> s.bottle.id == slotCompact.bottle).collect(toList());
+        Slot slot;
+        if (slots.isEmpty()) {
+            slot = slotService.add(new Slot(slotService.getBottle(slotCompact.bottle), slotCompact.count));
+            cellar.wines.add(slot);
+            cellarRepository.save(cellar);
+        }
+        else {
+            slot = slots.get(0);
+            slotService.up(slot, slotCompact.count, Cellar.limit);
+        }
+
+        return slot;
+    }
+
+    public Slot up(int idUser, int id, int idSlot) {
+        User user = userService.get(idUser);
+        if (user == null) {
+            return null;
+        }
+
+        List<Cellar> cellars = user.cellars.stream().filter(c -> c.id == id).collect(toList());
+        if (cellars.isEmpty()) {
+            return null;
+        }
+
+        Cellar cellar = cellars.get(0);
+        if (cellar == null) {
+            return null;
+        }
+
+        List<Slot> slots = cellar.wines.stream().filter(s -> s.id == idSlot).collect(toList());
+        if (slots.isEmpty()) {
+            return null;
+        }
+
+        Slot slot = slots.get(0);
+        if (slot == null) {
+            return null;
+        }
+
+        return slotService.up(slot, 1, Cellar.limit);
+    }
+
+    public Slot down(int idUser, int id, int idSlot) {
+        User user = userService.get(idUser);
+        if (user == null) {
+            return null;
+        }
+
+        List<Cellar> cellars = user.cellars.stream().filter(c -> c.id == id).collect(toList());
+        if (cellars.isEmpty()) {
+            return null;
+        }
+
+        Cellar cellar = cellars.get(0);
+        if (cellar == null) {
+            return null;
+        }
+
+        List<Slot> slots = cellar.wines.stream().filter(s -> s.id == idSlot).collect(toList());
+        if (slots.isEmpty()) {
+            return null;
+        }
+
+        Slot slot = slots.get(0);
+        if (slot == null) {
+            return null;
+        }
+
+        Slot updatedSlot = slotService.down(slot, 1);
+        if (updatedSlot.count <= 0) {
+            cellar.wines.removeIf(w -> w.id == updatedSlot.id);
+            cellarRepository.save(cellar);
+            slotService.remove(updatedSlot);
+        }
+
+        return updatedSlot;
+    }
+
     public Cellar remove(Cellar cellar) {
         if (cellar == null) {
             return null;

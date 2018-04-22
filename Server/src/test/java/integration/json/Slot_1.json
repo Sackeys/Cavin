@@ -1,0 +1,22 @@
+{
+  "id": 2,
+  "bottle": {
+    "id": 2,
+    "label": "Champagne Bollinger Rosé",
+    "region": {
+      "id": 5,
+      "label": "Corse"
+    },
+    "color": {
+      "id": 11,
+      "label": "Framboise",
+      "hexa": "e94e65"
+    },
+    "year": 2017,
+    "grape": {
+      "id": 7,
+      "label": "Cabernet-sauvignon"
+    }
+  },
+  "count": 6
+}

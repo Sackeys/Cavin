@@ -1,12 +1,10 @@
 package integration;
 
 import fr.univ_smb.isc.m2.models.Cellar;
+import fr.univ_smb.isc.m2.models.Slot;
 import org.apache.http.HttpHeaders;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.client.methods.*;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -35,6 +33,12 @@ public class CellarIntegrationTest {
     private JSONObject sampleUnit1 = JsonReader.getObject("Cellar_1");
     private JSONObject sampleUnit2 = JsonReader.getObject("Cellar_2");
     private JSONObject sampleUnit3 = JsonReader.getObject("Cellar_3");
+    private JSONObject sampleSlot1 = JsonReader.getObject("Slot_1");
+    private JSONObject sampleSlot2 = JsonReader.getObject("Slot_2");
+    private JSONObject sampleSlot3 = JsonReader.getObject("Slot_3");
+    private JSONObject sampleSlot4 = JsonReader.getObject("Slot_4");
+    private JSONObject sampleSlot5 = JsonReader.getObject("Slot_5");
+    private JSONObject sampleSlot6 = JsonReader.getObject("Slot_6");
 
 
     public CellarIntegrationTest() throws IOException, ParseException {
@@ -150,7 +154,7 @@ public class CellarIntegrationTest {
     }
 
     @Test
-    public void T9_Should_404_On_Remove_Fake_Cellar() throws IOException, URISyntaxException, ParseException {
+    public void T9_Should_404_On_Remove_Fake_Cellar() throws IOException, URISyntaxException {
         HttpUriRequest request = new HttpDelete(new URL("http://localhost:" + port + "/api/cellar/9?user=1").toURI());
         HttpResponse response = HttpClientBuilder.create().build().execute(request);
 
@@ -158,10 +162,170 @@ public class CellarIntegrationTest {
     }
 
     @Test
-    public void TA_Should_404_On_Remove_One_Cellar_From_Another_User() throws IOException, URISyntaxException, ParseException {
+    public void TA_Should_404_On_Remove_One_Cellar_From_Another_User() throws IOException, URISyntaxException {
         HttpUriRequest request = new HttpDelete(new URL("http://localhost:" + port + "/api/cellar/2?user=2").toURI());
         HttpResponse response = HttpClientBuilder.create().build().execute(request);
 
         assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_NOT_FOUND);
+    }
+
+    @Test
+    public void TB_Should_404_On_Add_One_Bottle_With_Negative_Count() throws IOException, URISyntaxException {
+        HttpPost request = new HttpPost(new URL("http://localhost:" + port + "/api/cellar/3?user=1").toURI());
+        String data = "{" +
+                "\"bottle\": \"2\", " +
+                "\"count\": \"-1\"" +
+                "}";
+
+        request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+        request.setEntity(new StringEntity(data, ContentType.APPLICATION_FORM_URLENCODED));
+
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_NOT_FOUND);
+    }
+
+    @Test
+    public void TC_Should_404_On_Add_One_Bottle_With_Null_Count() throws IOException, URISyntaxException {
+        HttpPost request = new HttpPost(new URL("http://localhost:" + port + "/api/cellar/3?user=1").toURI());
+        String data = "{" +
+                "\"bottle\": \"2\", " +
+                "\"count\": \"0\"" +
+                "}";
+
+        request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+        request.setEntity(new StringEntity(data, ContentType.APPLICATION_FORM_URLENCODED));
+
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_NOT_FOUND);
+    }
+
+    @Test
+    public void TD_Should_404_On_Add_One_Bottle_In_Unexisting_Cellar() throws IOException, URISyntaxException {
+        HttpPost request = new HttpPost(new URL("http://localhost:" + port + "/api/cellar/20?user=1").toURI());
+        String data = "{" +
+                "\"bottle\": \"2\", " +
+                "\"count\": \"2\"" +
+                "}";
+
+        request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+        request.setEntity(new StringEntity(data, ContentType.APPLICATION_FORM_URLENCODED));
+
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_NOT_FOUND);
+    }
+
+    @Test
+    public void TE_Should_Success_On_Add_One_Bottle_In_Existing_Cellar() throws IOException, URISyntaxException, ParseException {
+        HttpPost request = new HttpPost(new URL("http://localhost:" + port + "/api/cellar/3?user=1").toURI());
+        String data = "{" +
+                "\"bottle\": \"2\", " +
+                "\"count\": \"2\"" +
+                "}";
+
+        request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+        request.setEntity(new StringEntity(data, ContentType.APPLICATION_FORM_URLENCODED));
+
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        Slot slot = RetrieveUtil.retrieveResourceFromResponse(response, Slot.class);
+        JSONObject json = JsonReader.toObject(slot);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_OK);
+        assertThat(json).isEqualTo(sampleSlot1);
+    }
+
+    @Test
+    public void TF_Should_Success_On_Add_One_Bottle_In_New_Cellar() throws IOException, URISyntaxException, ParseException {
+        HttpPost request = new HttpPost(new URL("http://localhost:" + port + "/api/cellar/3?user=1").toURI());
+        String data = "{" +
+                "\"bottle\": \"3\", " +
+                "\"count\": \"8\"" +
+                "}";
+
+        request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+        request.setEntity(new StringEntity(data, ContentType.APPLICATION_FORM_URLENCODED));
+
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        Slot slot = RetrieveUtil.retrieveResourceFromResponse(response, Slot.class);
+        JSONObject json = JsonReader.toObject(slot);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_OK);
+        assertThat(json).isEqualTo(sampleSlot2);
+    }
+
+    @Test
+    public void TG_Should_Success_On_Add_Max_Bottle_In_Cellar() throws IOException, URISyntaxException, ParseException {
+        HttpPost request = new HttpPost(new URL("http://localhost:" + port + "/api/cellar/3?user=1").toURI());
+        String data = "{" +
+                "\"bottle\": \"3\", " +
+                "\"count\": \"20\"" +
+                "}";
+
+        request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+        request.setEntity(new StringEntity(data, ContentType.APPLICATION_FORM_URLENCODED));
+
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        Slot slot = RetrieveUtil.retrieveResourceFromResponse(response, Slot.class);
+        JSONObject json = JsonReader.toObject(slot);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_OK);
+        assertThat(json).isEqualTo(sampleSlot3);
+    }
+
+    @Test
+    public void TH_Should_NotChange_On_Up_Cellar_Bottle() throws IOException, URISyntaxException, ParseException {
+        HttpUriRequest request = new HttpPut(new URL("http://localhost:" + port + "/api/cellar/3/up?user=1&slot=2").toURI());
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        Slot slot = RetrieveUtil.retrieveResourceFromResponse(response, Slot.class);
+        JSONObject json = JsonReader.toObject(slot);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_OK);
+        assertThat(json).isEqualTo(sampleSlot4);
+    }
+
+    @Test
+    public void TI_Should_Success_On_Up_Cellar_Bottle_Max_To_Max() throws IOException, URISyntaxException, ParseException {
+        HttpUriRequest request = new HttpPut(new URL("http://localhost:" + port + "/api/cellar/3/up?user=1&slot=3").toURI());
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        Slot slot = RetrieveUtil.retrieveResourceFromResponse(response, Slot.class);
+        JSONObject json = JsonReader.toObject(slot);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_OK);
+        assertThat(json).isEqualTo(sampleSlot5);
+    }
+
+    @Test
+    public void TJ_Should_404_On_Up_Cellar_Unexisting_Bottle() throws IOException, URISyntaxException {
+        HttpUriRequest request = new HttpPut(new URL("http://localhost:" + port + "/api/cellar/3/up?user=1&slot=6").toURI());
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_NOT_FOUND);
+    }
+
+    @Test
+    public void TK_Should_404_On_Up_Cellar_Unexisting_Cellar() throws IOException, URISyntaxException {
+        HttpUriRequest request = new HttpPut(new URL("http://localhost:" + port + "/api/cellar/5/up?user=1&slot=3").toURI());
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_NOT_FOUND);
+    }
+
+    @Test
+    public void TL_Should_Succes_On_Down_Cellar_Bottle() throws IOException, URISyntaxException, ParseException {
+        HttpUriRequest request = new HttpPut(new URL("http://localhost:" + port + "/api/cellar/3/down?user=1&slot=2").toURI());
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+
+        Slot slot = RetrieveUtil.retrieveResourceFromResponse(response, Slot.class);
+        JSONObject json = JsonReader.toObject(slot);
+
+        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(SC_OK);
+        assertThat(json).isEqualTo(sampleSlot6);
     }
 }

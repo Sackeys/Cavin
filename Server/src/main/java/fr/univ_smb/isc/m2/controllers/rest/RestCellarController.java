@@ -3,6 +3,8 @@ package fr.univ_smb.isc.m2.controllers.rest;
 import fr.univ_smb.isc.m2.config.rest.ResourceNotFoundException;
 import fr.univ_smb.isc.m2.models.Cellar;
 import fr.univ_smb.isc.m2.models.CellarCompact;
+import fr.univ_smb.isc.m2.models.Slot;
+import fr.univ_smb.isc.m2.models.SlotCompact;
 import fr.univ_smb.isc.m2.services.CellarService;
 import fr.univ_smb.isc.m2.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,5 +58,46 @@ public class RestCellarController {
         }
 
         return cellar;
+    }
+
+    @RequestMapping(value = "/cellar/{id}", method = RequestMethod.POST)
+    public Slot add(@PathVariable String id, @RequestParam String user, @RequestBody SlotCompact slotCompact) {
+        int idCellar = parseInt(id),
+                idUser = parseInt(user);
+
+        Slot slot = cellarService.add(idUser, idCellar, slotCompact);
+        if (slot == null) {
+            throw new ResourceNotFoundException();
+        }
+
+        return slot;
+    }
+
+    @RequestMapping(value = "/cellar/{id}/up", method = RequestMethod.PUT)
+    public Slot up(@PathVariable String id, @RequestParam String user, @RequestParam String slot) {
+        int idCellar = parseInt(id),
+                idUser = parseInt(user),
+                idSlot = parseInt(slot);
+
+        Slot updatedSlot = cellarService.up(idUser, idCellar, idSlot);
+        if (updatedSlot == null) {
+            throw new ResourceNotFoundException();
+        }
+
+        return updatedSlot;
+    }
+
+    @RequestMapping(value = "/cellar/{id}/down", method = RequestMethod.PUT)
+    public Slot down(@PathVariable String id, @RequestParam String user, @RequestParam String slot) {
+        int idCellar = parseInt(id),
+                idUser = parseInt(user),
+                idSlot = parseInt(slot);
+
+        Slot updatedSlot = cellarService.down(idUser, idCellar, idSlot);
+        if (updatedSlot == null) {
+            throw new ResourceNotFoundException();
+        }
+
+        return updatedSlot;
     }
 }

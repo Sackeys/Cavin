@@ -36,13 +36,13 @@
                         <option value="default" disabled selected>Vin</option>
                         <option v-for="bottle in bottles" :value="bottle.id">{{ bottle.label }}</option>
                     </select>
-                    <input type="button" value="Ajouter" @click="add(cellar.id, quantity[i], bottle[i])" />
+                    <input type="button" value="Ajouter" @click="add(cellar.id, quantity[i], bottle[i], i)" />
                 </form>
                 <ul>
-                    <li v-for="slot in cellar.wines">
+                    <li v-for="(slot, j) in cellar.wines" :key="j">
                         <div :style="'display : inline-block; color : #' + slot.bottle.color.hexa + ';'">▉</div>
                         <strong>{{ slot.bottle.label }}</strong>, {{ slot.bottle.region.label }}, {{ slot.bottle.grape.label }} ({{ slot.bottle.year }})
-                        <button style="margin-left : 50px;">-</button><h2 style="display : inline-block; margin : 0 20px;">{{ slot.count }}</h2><button>+</button>
+                        <button @click="down(cellar.id, slot.id, i, j)" style="margin-left : 50px;">-</button><h2 style="display : inline-block; margin : 0 20px;">{{ slot.count }}</h2><button @click="up(cellar.id, slot.id, i)">+</button>
                     </li>
                 </ul>
             </li>
@@ -125,8 +125,67 @@
                 });
             },
 
-            add : function(id, qte, bottle) {
-                console.log(id, qte, bottle)
+            add : function(id, qte, bottle, i) {
+                let slot = {
+                    "bottle" : bottle,
+                    "count" : qte
+                };
+
+                $.ajax({
+                    url : '/api/cellar/' + id + '?user=' + this.token,
+                    type : 'POST',
+                    data : JSON.stringify(slot),
+                    contentType : 'application/json',
+                    success : (slotAdded) => {
+                        let found = false;
+                        for (let slot of this.cellars[i].wines) {
+                            if (slot.id === slotAdded.id) {
+                                slot.count = slotAdded.count;
+                                found = true;
+                                break;
+                            }
+                        }
+
+                        if (!found)
+                            this.cellars[i].wines.push(slotAdded);
+                    }
+                });
+            },
+
+            up : function(id, slotId, i) {
+                $.ajax({
+                    url : '/api/cellar/' + id + "/up?user=" + this.token + '&slot=' + slotId,
+                    type : 'PUT',
+                    success : (slotUpdated) => {
+                        for (let slot of this.cellars[i].wines) {
+                            if (slot.id === slotUpdated.id) {
+                                slot.count = slotUpdated.count;
+                                break;
+                            }
+                        }
+                    }
+                });
+            },
+
+            down : function(id, slotId, i, j) {
+                $.ajax({
+                    url : '/api/cellar/' + id + "/down?user=" + this.token + '&slot=' + slotId,
+                    type : 'PUT',
+                    success : (slotUpdated) => {
+                        for (let slot of this.cellars[i].wines) {
+                            if (slot.id === slotUpdated.id) {
+                                if (slotUpdated.count <= 0) {
+                                    this.cellars[i].wines.splice(j, 1);
+                                }
+                                else {
+                                    slot.count = slotUpdated.count;
+                                }
+
+                                break;
+                            }
+                        }
+                    }
+                });
             }
         },
 
